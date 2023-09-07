@@ -51,14 +51,14 @@ async def sysinfo(e):
     disk = psutil.disk_usage('/')
     dl_size = psutil.net_io_counters().bytes_recv
     ul_size = psutil.net_io_counters().bytes_sent
-    message = await e.reply_text(f"<b>╭「 💠 BOT STATISTICS 」</b>\n"
-                                 f"<b>│</b>\n"
-                                 f"<b>├💾 Total Disk Space : {psutil._common.bytes2human(disk.total)}</b>\n"
-                                 f"<b>├📀 Total Used Space : {psutil._common.bytes2human(disk.used)}</b>\n"
-                                 f"<b>├💿 Total Free Space : {psutil._common.bytes2human(disk.free)}</b>\n"
-                                 f"<b>├🔺 Total Upload : {psutil._common.bytes2human(ul_size)}</b>\n"
-                                 f"<b>├🔻 Total Download : {psutil._common.bytes2human(dl_size)}</b>\n"
-                                 f"<b>├🖥 CPU : {cpuUsage}%</b>\n"
-                                 f"<b>├⚙️ RAM : {int(ram_stats.percent)}%</b>\n"
-                                 f"<b>╰💿 DISK : {int(disk.percent)}%</b>")
+    message = await e.reply_text(f"<u><b>SYSTEM STATS 🧮</b></u>\n\n"
+                                 f"<b>Total Disk Space:</b> {psutil._common.bytes2human(disk.total)}\n"
+                                 f"<b>Used:</b> {psutil._common.bytes2human(disk.used)} | <b>Free:</b> {psutil._common.bytes2human(disk.free)}\n"
+                                 f"<b>📤 Total Upload:</b> {psutil._common.bytes2human(ul_size)}\n"
+                                 f"<b>📥 Total Download:</b> {psutil._common.bytes2human(dl_size)}\n"
+                                 f"<b>Total Ram Space:</b> {psutil._common.bytes2human(ram_stats.total)}\n"
+                                 f"<b>Used:</b>{psutil._common.bytes2human(ram_stats.total)} | <b>Free:</b> {psutil._common.bytes2human(ram_stats.available)}\n\n"
+                                 f"<b>🖥 CPU:</b> {cpuUsage}%\n"
+                                 f"<b>⚙️ RAM:</b> {int(ram_stats.percent)}%\n"
+                                 f"<b>💿 DISK:</b> {int(disk.percent)}%")
     
