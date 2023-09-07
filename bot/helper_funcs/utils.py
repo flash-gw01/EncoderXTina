@@ -52,12 +52,12 @@ async def sysinfo(e):
     dl_size = psutil.net_io_counters().bytes_recv
     ul_size = psutil.net_io_counters().bytes_sent
     message = await e.reply_text(f"<u><b>SYSTEM STATS 🧮</b></u>\n\n"
-                                 f"<b>Total Disk Space:</b> {psutil._common.bytes2human(disk.total)}\n"
-                                 f"<b>Used:</b> {psutil._common.bytes2human(disk.used)} | <b>Free:</b> {psutil._common.bytes2human(disk.free)}\n"
-                                 f"<b>📤 Total Upload:</b> {psutil._common.bytes2human(ul_size)}\n"
-                                 f"<b>📥 Total Download:</b> {psutil._common.bytes2human(dl_size)}\n"
-                                 f"<b>Total Ram Space:</b> {psutil._common.bytes2human(ram_stats.total)}\n"
-                                 f"<b>Used:</b>{psutil._common.bytes2human(ram_stats.total)} | <b>Free:</b> {psutil._common.bytes2human(ram_stats.available)}\n\n"
+                                 f"<b>Total Disk Space:</b> {psutil._common.bytes2human(disk.total)}B\n"
+                                 f"<b>Used:</b> {psutil._common.bytes2human(disk.used)}B | <b>Free:</b> {psutil._common.bytes2human(disk.free)}B\n\n"
+                                 f"<b>🔺 Total Upload:</b> {psutil._common.bytes2human(ul_size)}B\n"
+                                 f"<b>🔻 Total Download:</b> {psutil._common.bytes2human(dl_size)}B\n"
+                                 f"<b>Total Ram Space:</b> {psutil._common.bytes2human(ram_stats.total)}B\n\n"
+                                 f"<b>Used:</b>{psutil._common.bytes2human(ram_stats.total)}B | <b>Free:</b> {psutil._common.bytes2human(ram_stats.available)}B\n\n"
                                  f"<b>🖥 CPU:</b> {cpuUsage}%\n"
                                  f"<b>⚙️ RAM:</b> {int(ram_stats.percent)}%\n"
                                  f"<b>💿 DISK:</b> {int(disk.percent)}%")
