@@ -111,20 +111,11 @@ if __name__ == "__main__" :
        else:
            await message.reply_text("Admin Only 🔒")
 
-    async def test(event):
-    try:
-        zylern = "speedtest --simple"
-        fetch = await asyncrunapp(
-            zylern,
-            stdout=asyncPIPE,
-            stderr=asyncPIPE,
-        )
-        stdout, stderr = await fetch.communicate()
-        result = str(stdout.decode().strip()) \
-            + str(stderr.decode().strip())
-        await event.reply("**" + result + "**")
-    except FileNotFoundError:
-        await event.reply("**Install speedtest-cli**")
+    @app.on_message(filters.incoming & filters.command(["speed", f"speed@{BOT_USERNAME}"]))
+    async def help_message(app, message):
+       if message.from_user.id in AUTH_USERS:
+            return await message.reply_text("**Sorry You're not An Authorised User!**")
+           await test(message)
                
     @app.on_message(filters.incoming & filters.command(["resolution", f"resolution@{BOT_USERNAME}"]))
     async def changer(app, message):
