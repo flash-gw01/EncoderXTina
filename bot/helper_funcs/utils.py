@@ -74,7 +74,7 @@ def speed_convert(size, byte=True):
         zero += 1
     return f"{round(size, 2)} {units[zero]}"
 
-def speedtest(update, context):
+async def speedtest(update, context):
     speed = sendMessage("Running Speed Test. Wait about 20 secs.", context.bot, update.message)
     test = Speedtest()
     test.get_best_server()
@@ -83,17 +83,15 @@ def speedtest(update, context):
     test.results.share()
     result = test.results.dict()
     path = (result['share'])
-    string_speed = f'''
-<b>Server</b>
-<b>Name:</b> <code>{result['server']['name']}</code>
-<b>Country:</b> <code>{result['server']['country']}, {result['server']['cc']}</code>
-<b>Sponsor:</b> <code>{result['server']['sponsor']}</code>
-<b>ISP:</b> <code>{result['client']['isp']}</code>
+ message = await e.reply_text(f"<b>Server</b>"
+                              f"<b>Name:</b> <code>{result['server']['name']}</code>"
+                              f"<b>Country:</b> <code>{result['server']['country']}, {result['server']['cc']}</code>"
+                              f"<b>Sponsor:</b> <code>{result['server']['sponsor']}</code>"
+                              f"<b>ISP:</b> <code>{result['client']['isp']}</code>"
 
-<b>SpeedTest Results</b>
-<b>Upload:</b> <code>{speed_convert(result['upload'], False)}</code>
-<b>Download:</b>  <code>{speed_convert(result['download'], False)}</code>
-<b>Ping:</b> <code>{result['ping']} ms</code>
-<b>ISP Rating:</b> <code>{result['client']['isprating']}</code>
-'''
+                              f"<b>SpeedTest Results</b>"
+                              f"<b>Upload:</b> <code>{speed_convert(result['upload'], False)}</code>"
+                              f"<b>Download:</b>  <code>{speed_convert(result['download'], False)}</code>"
+                              f"<b>ISP Rating:</b> <code>{result['client']['isprating']}</code>")
+
     
