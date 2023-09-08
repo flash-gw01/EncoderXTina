@@ -110,12 +110,6 @@ if __name__ == "__main__" :
            await sysinfo(message)
        else:
            await message.reply_text("Admin Only 🔒")
-
-    @app.on_message(filters.incoming & filters.command(["speed", f"speed@{BOT_USERNAME}"]))
-    async def help_message(event):
-       if message.from_user.id in AUTH_USERS:
-            return await message.reply_text("**Sorry You're not An Authorised User!**")
-           await test(event)
                
     @app.on_message(filters.incoming & filters.command(["resolution", f"resolution@{BOT_USERNAME}"]))
     async def changer(app, message):
