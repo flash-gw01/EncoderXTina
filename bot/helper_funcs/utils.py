@@ -56,9 +56,9 @@ async def test(event):
         stdout, stderr = await fetch.communicate()
         result = str(stdout.decode().strip()) \
             + str(stderr.decode().strip())
-        await event.reply("**" + result + "**")
+        await message.reply_text("**" + result + "**")
     except FileNotFoundError:
-        await event.reply("**Install speedtest-cli**")
+        await message.reply_text("**Install speedtest-cli**")
 
 async def sysinfo(e):
     cpuUsage = psutil.cpu_percent(interval=0.5)
