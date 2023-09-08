@@ -8,12 +8,7 @@ logging.basicConfig(
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 LOGGER = logging.getLogger(__name__)
 
-import os, asyncio, pyrogram, psutil, platform
-from threading import Thread
-import time
-from charset_normalizer import logging
-from bot import dispatcher, botStartTime
-from speedtest import Speedtest
+import os, asyncio, pyrogram, psutil, platform, time
 from bot import data
 from bot.plugins.incoming_message_fn import incoming_compress_message_f
 from pyrogram.types import Message
