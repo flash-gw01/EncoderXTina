@@ -113,8 +113,8 @@ if __name__ == "__main__" :
 
     @app.on_message(filters.incoming & filters.command(["speed", f"speed@{BOT_USERNAME}"]))
 async def help_message(app, message):
-    if str(e.sender_id) not in AUTH_USERS and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+    if message.from_user.id in AUTH_USERS:
+        return await message.reply_text("**Sorry You're not An Authorised User!**")
     await test(e)
                
     @app.on_message(filters.incoming & filters.command(["resolution", f"resolution@{BOT_USERNAME}"]))
