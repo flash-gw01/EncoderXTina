@@ -111,12 +111,11 @@ if __name__ == "__main__" :
        else:
            await message.reply_text("Admin Only 🔒")
 
-    @app.on_message(filters.incoming & filters.command(["speed", f"speed@{BOT_USERNAME}"]))
-    async def help_message(app, message):
-       if message.from_user.id in AUTH_USERS:
-           await speed(message)
-       else:
-           await message.reply_text("Admin Only 🔒")
+    @bot.on(events.NewMessage(pattern="/speed"))
+async def _(e):
+    if str(e.sender_id) not in AUTH_USERS and e.sender_id !=DEV:
+        return e.reply("**Sorry You're not An Authorised User!**")
+    await test(e)
                
     @app.on_message(filters.incoming & filters.command(["resolution", f"resolution@{BOT_USERNAME}"]))
     async def changer(app, message):
