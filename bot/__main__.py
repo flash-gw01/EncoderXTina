@@ -111,13 +111,6 @@ if __name__ == "__main__" :
        else:
            await message.reply_text("Admin Only 🔒")
 
-    @app.on_message(filters.incoming & filters.command(["speedtest", f"speedtest@{BOT_USERNAME}"]))
-    async def help_message(app, message):
-       if message.from_user.id in AUTH_USERS:
-           await speedtest(message)
-       else:
-           await message.reply_text("Admin Only 🔒")
-               
     @app.on_message(filters.incoming & filters.command(["resolution", f"resolution@{BOT_USERNAME}"]))
     async def changer(app, message):
         if message.from_user.id in AUTH_USERS:
