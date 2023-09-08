@@ -83,15 +83,18 @@ async def speedtest(app, message):
     test.results.share()
     result = test.results.dict()
     path = (result['share'])
- message = await message.reply_text(f"<b>Server</b>"
-                                    f"<b>Name:</b> <code>{result['server']['name']}</code>"
-                                    f"<b>Country:</b> <code>{result['server']['country']}, {result['server']['cc']}</code>"
-                                    f"<b>Sponsor:</b> <code>{result['server']['sponsor']}</code>"
-                                    f"<b>ISP:</b> <code>{result['client']['isp']}</code>"
+ message = await message.reply_text(f'''
+<b>Server</b>
+<b>Name:</b> <code>{result['server']['name']}</code>
+<b>Country:</b> <code>{result['server']['country']}, {result['server']['cc']}</code>
+<b>Sponsor:</b> <code>{result['server']['sponsor']}</code>
+<b>ISP:</b> <code>{result['client']['isp']}</code>
 
-                                    f"<b>SpeedTest Results</b>"
-                                    f"<b>Upload:</b> <code>{speed_convert(result['upload'], False)}</code>"
-                                    f"<b>Download:</b>  <code>{speed_convert(result['download'], False)}</code>"
-                                    f"<b>ISP Rating:</b> <code>{result['client']['isprating']}</code>")
-
+<b>SpeedTest Results</b>
+<b>Upload:</b> <code>{speed_convert(result['upload'], False)}</code>
+<b>Download:</b>  <code>{speed_convert(result['download'], False)}</code>
+<b>Ping:</b> <code>{result['ping']} ms</code>
+<b>ISP Rating:</b> <code>{result['client']['isprating']}</code>
+<b>Bot Uptime:</b> <code>{currentTime}</code>
+''')
     
