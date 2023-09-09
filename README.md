@@ -1,4 +1,4 @@
-# 720p-Encoder-pro
+# Encoder X
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
