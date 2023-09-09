@@ -3,8 +3,6 @@
 # (c) @AbirHasan2005
 
 from bot.get_cfg import get_config
-from bot.helper_funcs.ffmpeg import (out_put_file_name)
-
 
 class Localisation:
     START_TEXT = "Hello, \n\nThis is a Telegram <b>Video Encoder Bot</b>. \n\n<b>Please send me any Telegram big video file I will compress it as s small video file!</b> \n\n/help for more details. \n\n✨ Enjoy....."
@@ -14,11 +12,11 @@ class Localisation:
     FORMAT_SELECTION = "Select the desired format: <a href='{}'>file size might be approximate</a> \nIf you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons.\nYou can use /deletethumbnail to delete the auto-generated thumbnail."
     
     
-    DOWNLOAD_START = "Downloading ... 📥 \n"
+    DOWNLOAD_START = "Downloading ....📥 \n"
     
-    UPLOAD_START = "Uploading ... 📤 \n"
+    UPLOAD_START = "Uploading ....📤 \n"
     
-    COMPRESS_START = "Trying to encode ... 📀"
+    COMPRESS_START = "Trying to encode ....📀"
     
     RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, trying to upload."
     
