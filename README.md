@@ -17,10 +17,11 @@ codec - Your Codec Setting  🗳
 resolution - Your Resolution Setting  📊
 preset - Your Preset Setting  ⚡️
 audio - Your Audio Setting   🔊
-sysinfo - Get System Information 📺
+sysinfo - Get System Information 💻
 settings -  Current Ffmpeg Settings ⚙
 restart - Bot Rebooting  ♻️
 cancel - last one cancel  ❌
 compress - Add Task 🔰
+log - See App Log 📜
 clear - cleared Queue ... ☢
-ping - See My ping Time ⏳.... 
+ping - See My ping Time ⏳....
