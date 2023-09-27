@@ -12,31 +12,31 @@ class Localisation:
     FORMAT_SELECTION = "Select the desired format: <a href='{}'>file size might be approximate</a> \nIf you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons.\nYou can use /deletethumbnail to delete the auto-generated thumbnail."
     
     
-    DOWNLOAD_START = "Downloading....📥 \n"
+    DOWNLOAD_START = "Dᴏᴡɴʟᴏᴀᴅɪɴɢ....📥 \n"
     
-    UPLOAD_START = "Uploading....📤 \n"
+    UPLOAD_START = "Uᴘʟᴏᴀᴅɪɴɢ....📤 \n"
     
-    COMPRESS_START = "Trying to encode....📀"
+    COMPRESS_START = "Tʀʏɪɴɢ ᴛᴏ Eɴᴄᴏᴅᴇ....📀"
     
     RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, trying to upload."
     
     RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry. But, I cannot upload files greater than 1.95GB due to Telegram API limitations."
     
-    COMPRESS_SUCCESS = "© ENCODED BY 𝑹𝒖𝒍𝒇...."
+    COMPRESS_SUCCESS = "© Eɴᴄᴏᴅᴇᴅ Bʏ 𝑹𝒖𝒍𝒇...."
 
-    COMPRESS_PROGRESS = "⏳ ETA: {}\n🚀 Progress: {}%"
+    COMPRESS_PROGRESS = "⏳ ETA: {}\n🚀 Pʀᴏɢʀᴇꜱꜱ: {}%"
 
     SAVED_CUSTOM_THUMB_NAIL = "Custom video / file thumbnail saved. This image will be used in the video / file."
     
-    DEL_ETED_CUSTOM_THUMB_NAIL = "Custom thumbnail cleared succesfully...✅"
+    DEL_ETED_CUSTOM_THUMB_NAIL = "Cᴜꜱᴛᴏᴍ Tʜᴜᴍʙɴᴀɪʟ Cʟᴇᴀʀᴇᴅ Sᴜᴄᴄᴇꜱꜰᴜʟʟʏ...✅"
     
-    FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "Media cleared succesfully... ✅"
+    FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "Mᴇᴅɪᴀ Cʟᴇᴀʀᴇᴅ Sᴜᴄᴄᴇꜱꜰᴜʟʟʏ...✅"
     
-    SAVED_RECVD_DOC_FILE = "Downloaded Successfully...✅"
+    SAVED_RECVD_DOC_FILE = "Dᴏᴡɴʟᴏᴀᴅᴇᴅ Sᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ...✅"
     
     CUSTOM_CAPTION_UL_FILE = " "
     
-    NO_CUSTOM_THUMB_NAIL_FOUND = "No Custom ThumbNail found...💔"
+    NO_CUSTOM_THUMB_NAIL_FOUND = "Nᴏ Cᴜꜱᴛᴏᴍ Tʜᴜᴍʙɴᴀɪʟ Fᴏᴜɴᴅ...💔"
     
     NO_VOID_FORMAT_FOUND = "no-one gonna help you\n{}"
     
