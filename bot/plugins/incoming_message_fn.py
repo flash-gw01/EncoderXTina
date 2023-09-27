@@ -87,7 +87,7 @@ async def incoming_start_message_f(bot, update):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('👨‍💻 OWNER 👨‍💻', url='https://t.me/cmd_rulf')
+                    InlineKeyboardButton('👨‍💻 Oᴡɴᴇʀ 👨‍💻', url='https://t.me/cmd_rulf')
                 ]
             ]
         ),
@@ -229,7 +229,7 @@ async def incoming_compress_message_f(update):
       if( video is None ):
         try:
           await sent_message.edit_text(
-            text="Download stopped 🛑"
+            text="Dᴏᴡɴʟᴏᴀᴅ Sᴛᴏᴘᴘᴇᴅ 🛑"
           )
           chat_id = LOG_CHANNEL
           utc_now = datetime.datetime.utcnow()
@@ -243,7 +243,7 @@ async def incoming_compress_message_f(update):
         except:
           pass
        # delete_downloads()
-        LOGGER.info("Download stopped 🛑")
+        LOGGER.info("Dᴏᴡɴʟᴏᴀᴅ Sᴛᴏᴘᴘᴇᴅ 🛑")
         return
   except (ValueError) as e:
       try:
@@ -283,7 +283,7 @@ async def incoming_compress_message_f(update):
     if duration is None or bitrate is None:
       try:
         await sent_message.edit_text(                
-          text="⚠️ Getting video meta data failed ⚠️"                
+          text="⚠️ Gᴇᴛᴛɪɴɢ Vɪᴅᴇᴏ Mᴇᴛᴀ Dᴀᴛᴀ Fᴀɪʟᴇᴅ ⚠️"                
         )
         chat_id = LOG_CHANNEL
         utc_now = datetime.datetime.utcnow()
@@ -362,7 +362,7 @@ async def incoming_compress_message_f(update):
       if(upload is None):
         try:
           await sent_message.edit_text(
-            text="Upload stopped 🛑" 
+            text="Uᴘʟᴏᴀᴅ Sᴛᴏᴘᴘᴇᴅ 🛑" 
           )
           chat_id = LOG_CHANNEL
           utc_now = datetime.datetime.utcnow()
@@ -400,7 +400,7 @@ async def incoming_compress_message_f(update):
      # delete_downloads()
       try:
         await sent_message.edit_text(                    
-          text="⚠️ Compression failed ⚠️"               
+          text="⚠️ Cᴏᴍᴘʀᴇꜱꜱɪᴏɴ Fᴀɪʟᴇᴅ ⚠️"               
         )
         chat_id = LOG_CHANNEL
         now = datetime.datetime.now()
@@ -413,7 +413,7 @@ async def incoming_compress_message_f(update):
   #  delete_downloads()
     try:
       await sent_message.edit_text(                    
-        text="⚠️ Failed Downloaded path not exist ⚠️"               
+        text="⚠️ Fᴀɪʟᴇᴅ Dᴏᴡɴʟᴏᴀᴅᴇᴅ Pᴀᴛʜ ɴᴏᴛ Exɪꜱᴛ ⚠️"               
       )
       chat_id = LOG_CHANNEL
       utc_now = datetime.datetime.utcnow()
@@ -442,11 +442,11 @@ async def incoming_cancel_message_f(bot, update):
   if os.path.exists(status):
     inline_keyboard = []
     ikeyboard = []
-    ikeyboard.append(InlineKeyboardButton("Yes 🚫", callback_data=("fuckingdo").encode("UTF-8")))
-    ikeyboard.append(InlineKeyboardButton("No 🤗", callback_data=("fuckoff").encode("UTF-8")))
+    ikeyboard.append(InlineKeyboardButton("Yᴇꜱ 🚫", callback_data=("fuckingdo").encode("UTF-8")))
+    ikeyboard.append(InlineKeyboardButton("Nᴏ 🤗", callback_data=("fuckoff").encode("UTF-8")))
     inline_keyboard.append(ikeyboard)
     reply_markup = InlineKeyboardMarkup(inline_keyboard)
-    await update.reply_text("Are you sure? 🚫 This will stop the compression!", reply_markup=reply_markup, quote=True)
+    await update.reply_text("Aʀᴇ ʏᴏᴜ Sᴜʀᴇ? 🚫 Tʜɪꜱ Wɪʟʟ Sᴛᴏᴘ Tʜᴇ Cᴏᴍᴘʀᴇꜱꜱɪᴏɴ!", reply_markup=reply_markup, quote=True)
   else:
    # delete_downloads()
     await bot.send_message(
