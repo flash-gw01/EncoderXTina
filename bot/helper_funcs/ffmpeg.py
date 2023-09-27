@@ -34,7 +34,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     # https://stackoverflow.com/a/13891070/4723940
     kk = video_file.split("/")[-1]
     aa = kk.split(".")[-1]
-    out_put_file_name = kk.replace(f".{aa}", "[ENCODED].mkv")
+    out_put_file_name = kk.replace(f".{aa}", "[Eɴᴄᴏᴅᴇᴅ].mkv")
     #out_put_file_name = video_file + "_compressed" + ".mkv"
     progress = output_directory + "/" + "progress.txt"
     with open(progress, 'w') as f:
@@ -103,13 +103,13 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
         if difference > 0:
           ETA = TimeFormatter(difference*1000)
         percentage = math.floor(elapsed_time * 100 / total_time)
-        progress_str = "📈 <b>Progress:</b> {0}%\n[{1}{2}]".format(
+        progress_str = "📈 <b>Pʀᴏɢʀᴇꜱꜱ:</b> {0}%\n[{1}{2}]".format(
             round(percentage, 2),
             ''.join([FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 10))]),
             ''.join([UN_FINISHED_PROGRESS_STR for i in range(10 - math.floor(percentage / 10))])
             )
-        stats = f'🗳 <b>ENCODING IN PROGRESS</b>\n\n' \
-                f'⌚ <b>TIME LEFT:</b> {ETA}\n\n' \
+        stats = f'🗳 <b>Eɴᴄᴏᴅɪɴɢ ɪɴ Pʀᴏɢʀᴇꜱꜱ</b>\n\n' \
+                f'⌚ <b>Tɪᴍᴇ Lᴇꜰᴛ:</b> {ETA}\n\n' \
                 f'{progress_str}\n'
         try:
           await message.edit_text(
@@ -117,7 +117,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
             reply_markup=InlineKeyboardMarkup(
                 [
                     [ 
-                        InlineKeyboardButton('❌ Cancel ❌', callback_data='fuckingdo') # Nice Call 🤭
+                        InlineKeyboardButton('❌ Cᴀɴᴄᴇʟ ❌', callback_data='fuckingdo') # Nice Call 🤭
                     ]
                 ]
             )
@@ -133,7 +133,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     r = stderr.decode()
     try:
         if er:
-           await message.edit_text(str(er) + "\n\n ERROR...🔧 Contact @cmd_rulf")
+           await message.edit_text(str(er) + "\n\n Eʀʀᴏʀ...🔧 Cᴏɴᴛᴀᴄᴛ @cmd_rulf")
            os.remove(videofile)
            os.remove(out_put_file_name)
            return None
