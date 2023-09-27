@@ -22,6 +22,6 @@ settings -  Current Ffmpeg Settings ⚙
 restart - Bot Rebooting  ♻️
 cancel - last one cancel  ❌
 compress - Add Task 🔰
-log - See App Log 📜
+log - See App Log 📰
 clear - cleared Queue ... ☢
 ping - See My ping Time ⏳....
