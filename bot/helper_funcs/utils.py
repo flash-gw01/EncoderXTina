@@ -51,7 +51,7 @@ async def sysinfo(e):
     disk = psutil.disk_usage('/')
     dl_size = psutil.net_io_counters().bytes_recv
     ul_size = psutil.net_io_counters().bytes_sent
-    message = await e.reply_text(f"<u><b>SYSTEM STATS 🧮</b></u>\n\n"
+    message = await e.reply_text(f"<u><b>Sʏꜱᴛᴇᴍ Sᴛᴀᴛꜱ 🧮</b></u>\n\n"
                                  f"<b>💾 Total Disk Space:</b> {psutil._common.bytes2human(disk.total)}B\n"
                                  f"<b>Used:</b> {psutil._common.bytes2human(disk.used)}B | <b>Free:</b> {psutil._common.bytes2human(disk.free)}B\n\n"
                                  f"<b>🔺 Total Upload:</b> {psutil._common.bytes2human(ul_size)}B\n"
