@@ -9,8 +9,6 @@
     "Encoder",
     "bot"
   ],
-  "success_url": "https://t.me/linux_repo",
-  "website": "https://t.me/Discovery_Updates",
   "repository": "https://github.com/GitXBot101/GroupEncoder",
   "env": {
     "ENV": {
@@ -19,7 +17,7 @@
     },
     "SESSION_NAME": {
       "description": "Keep this default",
-      "value": "UltronEncoderBot",
+      "value": "EncoderX",
       "required": true
     },
     "TG_BOT_TOKEN": {
