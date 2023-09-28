@@ -82,7 +82,7 @@ async def incoming_compress_message_f(update):
   bst_now = utc_now + datetime.timedelta(minutes=00, hours=6)
   bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
   now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
-  download_start = await bot.send_message(chat_id, f"<b>Bot Become Busy Now 🥵</b>", parse_mode="markdown")
+  download_start = await bot.send_message(chat_id, f" **Bot Become Busy Now 🥵** ", parse_mode="markdown")
   try:
       d_start = time.time()
       status = DOWNLOAD_LOCATION + "/status.json"
