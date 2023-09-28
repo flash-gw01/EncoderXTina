@@ -95,7 +95,7 @@ if __name__ == "__main__" :
         else:
             await message.reply_text("Aᴅᴍɪɴ Oɴʟʏ 🔒")
             
-    @app.on_message(filters.incoming & filters.command(["settings", f"settingsRNAME}"]))
+    @app.on_message(filters.incoming & filters.command(["settings", f"settings@{BOT_USERNAME}"]))
     async def settings(app, message):
         if message.from_user.id in AUTH_USERS:
             await message.reply_text(f"<b>Tʜᴇ Cᴜʀʀᴇɴᴛ Sᴇᴛᴛɪɴɢꜱ ᴡɪʟʟ ʙᴇ Aᴅᴅᴇᴅ Yᴏᴜʀ Vɪᴅᴇᴏ Fɪʟᴇ ⚙️:</b>\n\n<b>➥ Codec</b> : {codec[0]} \n<b>➥ Crf</b> : {crf[0]} \n<b>➥ Resolution</b> : {resolution[0]} \n<b>➥ Preset</b> : {preset[0]} \n<b>➥ Audio Bitrates</b> : {audio_b[0]} \n\n<b>🥇 Tʜᴇ Aʙɪʟɪᴛʏ ᴛᴏ Cʜᴀɴɢᴇ Sᴇᴛᴛɪɴɢꜱ ɪꜱ Oɴʟʏ ꜰᴏʀ Aᴅᴍɪɴ</b>")
