@@ -45,42 +45,7 @@ broadcast_ids = {}
 bot = app        
 async def incoming_start_message_f(bot, update):
     """/start command"""
- 
-  #  update_channel = UPDATES_CHANNEL
-   # if update_channel:
-   # try:
-    #      user = await bot.get_chat_member(update_channel, update.chat.id)
-     #     if user.status == "kicked":
-      #         await bot.send_message(
-      #             chat_id=update.chat.id,
-      #             text="Sorry Sir, You are Banned to use me. Contact my [Boss](https://t.me/Nur0ns).",
-      #             parse_mode="markdown",
-      #             disable_web_page_preview=True
-      #          )
-      #         return
-      #    except:
-      #          pass
-      #  except UserNotParticipant:
-       #     await bot.send_message(
-       #         chat_id=update.chat.id,
-       #         text="**Please Join My Updates Channel to use this Bot!**",
-       #         reply_markup=InlineKeyboardMarkup(
-       #             [
-       #                 [
-       #                     InlineKeyboardButton("Join Updates Channel", url=f"https://t.me/{update_channel}")
-        #                ]
-        #            ]
-        #        ),
-        #        parse_mode="markdown"
-        #    )
-        #    return
-    #    except Exception:
-     #       await bot.send_message(
-      #          chat_id=update.chat.id,
-       #         text="Something went Wrong. Contact my [Boss](https://t.me/Nur0ns).",
-        #        parse_mode="markdown",
-         #       disable_web_page_preview=True)
-          #  return
+    
     await bot.send_message(
         chat_id=update.chat.id,
         text=Localisation.START_TEXT,
@@ -96,90 +61,7 @@ async def incoming_start_message_f(bot, update):
     
 async def incoming_compress_message_f(update):
   """/compress command"""
-
-  
-  #update_channel = UPDATES_CHANNEL
-  #if update_channel:
-  #try:
-  #        user = await bot.get_chat_member(update.chat.id)
-  #        if user.status == "kicked":
-  #           await bot.send_message(
-  #               chat_id=update.chat.id,
-  #               text="Sorry Sir, You are Banned to use me. Contact my [BOSS](https://t.me/Nur0ns).",
-  #               parse_mode="markdown",
-  #               disable_web_page_preview=True
-    #         )
-  #except:
-   # pass
-  #           return
- #     except UserNotParticipant:
-  #        await bot.send_message(
-   #           chat_id=update.chat.id,
-    #          text="**Please Join My Updates Channel to use this Bot!**",
-           #  reply_markup=InlineKeyboardMarkup(
-      #            [
-       ##               [
-        #                  InlineKeyboardButton("Join Updates Channel", url=f"https://t.me/{update_channel}")
-      #                ]
-      #            ]
-      #        ),
-      #        parse_mode="markdown"
-      #    )
-        #  return
-    #  except Exception:
-    #      await bot.send_message(
-    #          chat_id=update.chat.id,
-    #          text="Something went Wrong. Contact my [BOSS](https://t.me/Nur0ns).",
-    #          parse_mode="markdown",
-    #          disable_web_page_preview=True
-    #      )
-    #      return
-  #if update.reply_to_message is None:
-  #  try:
-  #    await bot.send_message(
-  #      chat_id=update.chat.id,
-  #      text="🤬 Reply to telegram media 🤬",
-  #      reply_to_message_id=update.message_id
-  #    )
-  #  except:
-  #    pass
-  #  return
-  #target_percentage = 50
-  #isAuto = False
-  #if len(update.command) > 1:
-  #  try:
-  #    if int(update.command[1]) <= 90 and int(update.command[1]) >= 10:
-  #      target_percentage = int(update.command[1])
-  #    else:
-  #      try:
-  #        await bot.send_message(
-  #          chat_id=update.chat.id,
-  #          text="🤬 Value should be 10 to 90",
-  #          reply_to_message_id=update.message_id
-  #        )
-  #        return
-  #      except:
-  #        pass
-  #  except:
-  #    pass
-  #else:
-    #media = replied.media
-  #  media = update.reply_to_message
-   # if hasattr(media, "document"):
-    #         file = media.document
-     #        mime_type = file.mime_type
-      #       filename = update.media.name
-       #      if not filename:
-        #         if "audio" in mime_type:
-         #            filename = (
-          #               "audio_" + datetime.now().isoformat("_", "seconds") + ".ogg"
-           #            )
-            #     elif "video" in mime_type:
-             #         filename = (
-              #             "video_" + datetime.now().isoformat("_", "seconds") + ".mp4"
-               #        )
-   # user_file = update.name
-                                   
+    
   isAuto = True
     #saved_file_path = video #DOWNLOAD_LOCATION + "/" + filename
     #LOGGER.info(saved_file_path)
@@ -200,7 +82,7 @@ async def incoming_compress_message_f(update):
   bst_now = utc_now + datetime.timedelta(minutes=00, hours=6)
   bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
   now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
-  download_start = await bot.send_message(chat_id, f"**Bot Become Busy Now !!** \n\nDownload Started at `{now}`", parse_mode="markdown")
+  download_start = await bot.send_message(chat_id, f"**Bot Become Busy Now !!** \n", parse_mode="markdown")
   try:
       d_start = time.time()
       status = DOWNLOAD_LOCATION + "/status.json"
@@ -238,7 +120,7 @@ async def incoming_compress_message_f(update):
           bst_now = utc_now + datetime.timedelta(minutes=00, hours=6)
           bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
           now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
-          await bot.send_message(chat_id, f"**Download Stopped, Bot is Free Now !!** \n\nProcess Done at `{now}`", parse_mode="markdown")
+          await bot.send_message(chat_id, f"**Download Stopped, Bot is Free Now !!** \n", parse_mode="markdown")
           await download_start.delete()
         except:
           pass
@@ -259,23 +141,6 @@ async def incoming_compress_message_f(update):
       )
   except:
       pass     
- # else:
-    #try:
- #     await bot.send_message(
- #       chat_id=update.chat.id,
- #       text=Localisation.FF_MPEG_RO_BOT_STOR_AGE_ALREADY_EXISTS,
-  # #     reply_markup=InlineKeyboardMarkup(
-   # #        [
-       #         [
-      #              InlineKeyboardButton('Show Bot Status', url=f'https://t.me/{LOG_CHANNEL}') # That's Username na ...
-     #           ]
-    #        ]
-   #     ),
-  #      reply_to_message_id=update.message_id
- #     )
-    #except:
-    #  pass
-   # return
   
   if os.path.exists(saved_file_path):
     downloaded_time = TimeFormatter((time.time() - d_start)*1000)
@@ -311,7 +176,7 @@ async def incoming_compress_message_f(update):
     bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
     now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
     await download_start.delete()
-    compress_start = await bot.send_message(chat_id, f"**Compressing Video ...** \n\nProcess Started at `{now}`", parse_mode="markdown")
+    compress_start = await bot.send_message(chat_id, f"**Compressing Video ...** \n", parse_mode="markdown")
     await sent_message.edit_text(                    
       text=Localisation.COMPRESS_START                    
     )
@@ -337,7 +202,7 @@ async def incoming_compress_message_f(update):
       bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
       now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
       await compress_start.delete()
-      upload_start = await bot.send_message(chat_id, f"**Uploading Video ...** \n\nProcess Started at `{now}`", parse_mode="markdown")
+      upload_start = await bot.send_message(chat_id, f"**Uploading Video ...** \n", parse_mode="markdown")
       await sent_message.edit_text(                    
         text=Localisation.UPLOAD_START,                    
       )
@@ -371,7 +236,7 @@ async def incoming_compress_message_f(update):
           bst_now = utc_now + datetime.timedelta(minutes=00, hours=6)
           bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
           now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
-          await bot.send_message(chat_id, f"**Upload Stopped, Bot is Free Now !!** \n\nProcess Done at `{now}`", parse_mode="markdown")
+          await bot.send_message(chat_id, f"**Upload Stopped, Bot is Free Now !!** \n", parse_mode="markdown")
           await upload_start.delete()
         except:
           pass
@@ -388,7 +253,7 @@ async def incoming_compress_message_f(update):
       bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
       now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
       await upload_start.delete()
-      await bot.send_message(chat_id, f"**Upload Done, Bot is Free Now !!** \n\nProcess Done at `{now}`", parse_mode="markdown")
+      await bot.send_message(chat_id, f"**Upload Done, Bot is Free Now !!** \n", parse_mode="markdown")
       LOGGER.info(upload.caption);
       try:
         await upload.edit_caption(
@@ -404,7 +269,7 @@ async def incoming_compress_message_f(update):
         )
         chat_id = LOG_CHANNEL
         now = datetime.datetime.now()
-        await bot.send_message(chat_id, f"**Compression Failed, Bot is Free Now !!** \n\nProcess Done at `{now}`", parse_mode="markdown")
+        await bot.send_message(chat_id, f"**Compression Failed, Bot is Free Now !!** \n", parse_mode="markdown")
         await download_start.delete()
       except:
         pass
@@ -422,7 +287,7 @@ async def incoming_compress_message_f(update):
       bst_now = utc_now + datetime.timedelta(minutes=00, hours=6)
       bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
       now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
-      await bot.send_message(chat_id, f"**Download Error, Bot is Free Now !!** \n\nProcess Done at `{now}`", parse_mode="markdown")
+      await bot.send_message(chat_id, f"**Download Error, Bot is Free Now !!** \n", parse_mode="markdown")
       await download_start.delete()
     except:
       pass
