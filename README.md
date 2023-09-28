@@ -1,13 +1,6 @@
 # Encoder X
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-::
-
-Oof 
-
 Your Bot Father Setting to put
-
 ```
 start - Bot Alive  🚀
 help - Help You  📜
@@ -25,3 +18,6 @@ compress - Add Task 🔰
 log - See App Log 📰
 clear - cleared Queue ... ☢
 ping - See My ping Time ⏳....
+
+# Deploy On Heroku 😜
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
