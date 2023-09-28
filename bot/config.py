@@ -2,6 +2,8 @@ from bot.get_cfg import get_config
 class Config(object):
     # You can keep this default
     SESSION_NAME = get_config("SESSION_NAME", "AHCompressorBot")
+    # Put MongoDB URL
+    DATABASE_URL = get_config("DATABASE_URL", "")
     # AHCompressBot....
     # sucks Dude
     APP_ID = int(get_config("APP_ID", 12345))
