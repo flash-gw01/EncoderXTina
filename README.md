@@ -1,6 +1,6 @@
 # Encoder X
 
-Encode Bot Commands </>
+Bot Commands </>
 ```
 start - Bot Alive  🚀
 help - Help You  📜
