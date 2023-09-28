@@ -10,6 +10,7 @@ from bot import (
     TG_BOT_TOKEN,
     BOT_USERNAME,
     SESSION_NAME,
+    DATABASE_URL,
     
     data,
     app,
@@ -31,12 +32,20 @@ from bot.plugins.incoming_message_fn import (
     incoming_compress_message_f,
     incoming_cancel_message_f
 )
-
+from bot.plugins.admin import (
+    sts,
+    ban,
+    unban,
+    _banned_usrs
+)
 
 from bot.plugins.status_message_fn import (
     eval_message_f,
     exec_message_f,
     upload_log_file
+)
+from bot.plugins.broadcast import (
+    broadcast_
 )
 
 from bot.commands import Command
@@ -85,6 +94,34 @@ if __name__ == "__main__" :
         filters=filters.command(["start", f"start@{BOT_USERNAME}"])
     )
     app.add_handler(incoming_start_message_handler)
+
+    # BAN Admin Command
+    incoming_ban_command = MessageHandler(
+        ban,
+        filters=filters.command(["ban_user"]) & filters.user(AUTH_USERS)
+    )
+    app.add_handler(incoming_ban_command)
+
+    # UNBAN Admin Command
+    incoming_unban_command = MessageHandler(
+        unban,
+        filters=filters.command(["unban_user"]) & filters.user(AUTH_USERS)
+    )
+    app.add_handler(incoming_unban_command)
+
+    # BANNED_USERS Admin Command
+    incoming_banned_command = MessageHandler(
+        _banned_usrs,
+        filters=filters.command(["banned_users"]) & filters.user(AUTH_USERS)
+    )
+    app.add_handler(incoming_banned_command)
+
+    # BROADCAST Admin Command
+    incoming_broadcast_command = MessageHandler(
+        broadcast_,
+        filters=filters.command(["broadcast"]) & filters.user(AUTH_USERS) & filters.reply
+    )
+    app.add_handler(incoming_broadcast_command)
     
     
     @app.on_message(filters.incoming & filters.command(["crf", f"crf@{BOT_USERNAME}"]))
