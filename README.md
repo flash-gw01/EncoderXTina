@@ -1,6 +1,6 @@
 # Encoder X
 
-Your Bot Father Setting to put
+Encode Bot Commands </>
 ```
 start - Bot Alive  🚀
 help - Help You  📜
