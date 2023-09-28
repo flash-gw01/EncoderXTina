@@ -19,5 +19,8 @@ log - See App Log 📰
 clear - cleared Queue ... ☢
 ping - See My ping Time ⏳....
 
+```
+
 # Deploy On Heroku 😜
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
