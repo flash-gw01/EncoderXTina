@@ -29,7 +29,7 @@
       "description": "Do Force Sub! Add your Channel username which you want to do Force Sub. Read README.md file first!",
       "value": "",
       "required": false
-    }
+    },
     "TG_BOT_TOKEN": {
       "description": "Your bot token, as a string. Get this from @BotFather",
       "value": "",
